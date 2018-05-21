@@ -1,0 +1,54 @@
+body, p {
+    margin: 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main{
+    flex: 1;
+}
+
+.nav-large {
+    height: 100%;
+}
+
+.content{
+    height: 100%;
+}
+
+.nav-small {
+    position: absolute;
+    background-color: white;
+    display: none;
+    z-index: 9999;
+}
+
+.collapsed {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline:none;
+}
+
+.collapsed:active {
+    border: 1px solid transparent;
+}
+
+.collapsed .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #563d7c;
+}
+
+.collapsed .icon-bar + .icon-bar {
+    margin-top: 4px;
+}
