@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="main.css" rel="stylesheet"/>
     <title>Insert title here</title>
 </head>
@@ -15,6 +15,31 @@
                 <a class="navbar-brand" href="#">Navbar</a>
                 <div style="display: flex; justify-content: flex-start; align-items: center;">
                     <span class="navbar-text">
+                        <select id="select-theme">
+                            <option value="">default</option>
+                            <option value="cerulean">cerulean</option>
+                            <option value="cosmo">cosmo</option>
+                            <option value="cyborg">cyborg</option>
+                            <option value="darkly">darkly</option>
+                            <option value="flatly">flatly</option>
+                            <option value="journal">journal</option>
+                            <option value="litera">litera</option>
+                            <option value="lumen">lumen</option>
+                            <option value="lux">lux</option>
+                            <option value="material">material</option>
+                            <option value="minty">minty</option>
+                            <option value="pulse">pulse</option>
+                            <option value="sandstone">sandstone</option>
+                            <option value="simplex">simplex</option>
+                            <option value="sketchy">sketchy</option>
+                            <option value="slate">slate</option>
+                            <option value="solar">solar</option>
+                            <option value="spacelab">spacelab</option>
+                            <option value="superhero">superhero</option>
+                            <option value="united">united</option>
+                            <option value="yeti">yeti</option>
+                        </select>
+                        </select>
                         user | <a href="#">logout</a>
                     </span>
                     <button class="collapsed d-block d-md-none" type="button">
@@ -45,7 +70,7 @@
 
             <div class="container-fluid" style="height: 100%;">
                 <div class="row" style="height:inherit">
-                    <div class="nav-large d-none d-md-block col-md-3 col-lg-2" style="background-color: aquamarine;">
+                    <div class="nav-large d-none d-md-block col-md-3 col-lg-2">
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">Active</a>
@@ -95,5 +120,13 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script>
+        var bsLink = $('#bootstrap');
+        var selectTheme = $('#select-theme');
+
+        selectTheme.change(function(){
+            bsLink.attr('href', 'css/bootstrap' + (this.value == ''? '': '.' + this.value) + '.min.css');
+        });
+    </script>
 </body>
 </html>
